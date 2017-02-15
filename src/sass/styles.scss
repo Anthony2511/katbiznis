@@ -5,11 +5,6 @@
 * 09/02/2017
 */
 
-html{
-    background: yellow;
-
-    body {
-        color: blue;
-        display: flex;
-    }
-}
+@import "generic/reset.scss";
+@import "objects/card.scss";
+@import "base/init.scss";

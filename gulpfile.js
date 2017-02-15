@@ -10,7 +10,7 @@ var gulp = require( "gulp" ),
     sass = require( "gulp-sass" ),
     autoprefixer = require( "gulp-autoprefixer" ),
     csso = require( "gulp-csso" ),
-    pug = require( "gulp-pug" )
+    pug = require( "gulp-pug" ),
     babel = require( "gulp-babel");
 
 // --- Task for images
@@ -50,10 +50,10 @@ gulp.task( "js", function() {
 // --- Watch tasks
 
 gulp.task( "watch", function() {
-    gulp.watch( "/src/images/**", [ "images" ] );
-    gulp.watch( "/src/sass/**/*.scss", [ "css" ] );
-    gulp.watch( "/src/pug/**/*.pug", [ "html" ] );
-    gulp.watch( "/src/js/**/*.js", [ "js" ] );
+    gulp.watch( "src/images/**", [ "images" ] );
+    gulp.watch( "src/sass/**/*.scss", [ "css" ] );
+    gulp.watch( "src/pug/**/*.pug", [ "html" ] );
+    gulp.watch( "src/js/**/*.js", [ "js" ] );
 } );
 
 // --- Aliases
