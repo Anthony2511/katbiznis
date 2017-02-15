@@ -5,4 +5,6 @@
 * 09/02/2017
 */
 
-console.log( "Hello, world !" );
+$('#wrap').click(function (e) {
+  $(this).toggleClass('flipped');
+});

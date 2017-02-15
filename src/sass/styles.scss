@@ -1,10 +1,132 @@
 /*
 *
-* /src/sass/styles.scss
+*  /src/sass/styles.scss
 *
-* 09/02/2017
+* started at 09/02/2017
 */
 
-@import "generic/reset.scss";
-@import "objects/card.scss";
-@import "base/init.scss";
+@import "generic/reset";
+
+h1 {
+    margin : 1em 0;
+    text-align: center;
+    font-size: 2em;
+}
+
+body {
+    margin: 0 20%;
+}
+
+.wrap {
+    display: block;
+    margin: 0 auto;
+}
+
+.recto__list {
+    background: url( "../images/card-bcg.jpg" ) center;
+    background-size: cover;
+    color: #ecf0f1;
+    font-size: 1em;
+    position: relative;
+}
+
+.recto__info {
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.recto__item {
+    display: inline-block;
+    margin-right: 0.5em;
+
+}
+
+.verso__list{
+    background-color: grey;
+    position: relative;
+    top: -460px;
+}
+
+.verso__info{
+
+}
+
+.verso__item{
+
+}
+
+.recto__list, .verso__list{
+    max-width: 720px;
+    height: 280px;
+    margin: 60px auto;
+}
+
+ul {
+    padding: 20px;
+}
+
+.flip-icon {
+    display: none;
+}
+
+@media( min-width: 720px ) {
+    html {
+        font-size: 2em;
+    }
+
+    body {
+        perspective: 1000;
+    }
+
+    .wrap{
+        position: relative;
+        max-width: 1024px;
+        width: 100%;
+        height: 576px;
+        transition: all 1.0s linear;
+    }
+
+    .recto__list, .verso__list {
+        max-width: 500px;
+        width: 100%;
+        height: 400px;
+        backface-visibility: hidden;
+    }
+
+    .recto__list{
+        z-index: 1;
+    }
+
+    .verso__list {
+        transform: rotateY(180deg);
+    }
+
+    .flip-icon {
+        display: block;
+        position: absolute;
+        top: 550px;
+        left: 420px;
+        z-index: 2;
+        padding: 10px;
+    }
+
+    .flip-front {
+        right: 20px;
+    }
+
+    .flip-back {
+        left: 20px;
+        transform: rotateY(180deg);
+    }
+
+    .flip {
+        transform: rotateY(180deg);
+    }
+    .flipped .verso__list {
+  transform: rotateY(0deg);
+}
+
+.flipped .recto__list {
+  transform: rotateY(180deg);
+}
+}
